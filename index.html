@@ -3,29 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side by Side Embed</title>
+    <title>Embed Layout</title>
     <style>
         .container {
             display: flex;
-            justify-content: space-between; /* Adjusts space between items */
-            align-items: center; /* Aligns items vertically */
+            flex-direction: column; /* Stacks children vertically */
+            align-items: center; /* Centers elements horizontally */
         }
-        .embed {
-            margin-right: 10px; /* Adds space between elements */
+
+        .top-embed {
+            margin-bottom: 20px; /* Adds space between top and bottom sections */
+        }
+
+        .bottom-container {
+            display: flex;
+            justify-content: space-between; /* Adjusts space between bottom embeds */
+            width: 100%; /* Ensures the bottom embeds take up full width */
+        }
+
+        .bottom-embed {
+            flex: 1; /* Distributes space equally between bottom embeds */
+            margin-right: 10px; /* Adds space between bottom embeds */
+        }
+
+        .bottom-embed:last-child {
+            margin-right: 0; /* Removes right margin from the last element */
         }
     </style>
 </head>
 <body>
-    <script src="https://zoomhub.net/6XnkW.js?width=1080px&height=566px"></script>
     <div class="container">
-        <!-- First Embed -->
-        <div class="embed">
-            <script src="https://zoomhub.net/1zny6.js?width=auto&height=auto"></script>
+        <!-- Top Embed -->
+        <div class="top-embed">
+            <script src="https://zoomhub.net/6XnkW.js?width=1080px&height=566px"></script>
         </div>
 
-        <!-- Second Embed (You can replace this with another script, image, or text) -->
-        <div class="embed">
-            <script src="https://zoomhub.net/Bwnk0.js?width=auto&height=auto"></script>
+        <!-- Bottom Container for Side-by-Side Embeds -->
+        <div class="bottom-container">
+            <div class="bottom-embed">
+                <script src="https://zoomhub.net/1zny6.js?width=535px&height=auto&border=none"></script>
+            </div>
+            <div class="bottom-embed">
+                <script src="https://zoomhub.net/Bwnk0.js?width=535px&height=auto&border=none"></script>
+            </div>
         </div>
     </div>
 </body>
